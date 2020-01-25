@@ -18,8 +18,7 @@ namespace Core_WebApp.Models
         public string CategoryName { get; set; }
         [Required(ErrorMessage = "Base Price is required")]
         public int BasePrice { get; set; }
-        // one to many relationship
-        public IList<Product> Products { get; set; }
+       // public ICollection<Product> Products { get; set; }
     }
 
     public class Product
@@ -36,7 +35,7 @@ namespace Core_WebApp.Models
         public string Description { get; set; }
         [Required(ErrorMessage = "Price is required")]
         public int Price { get; set; }
-        
+        public int CategoryRowId { get; set; }
         public Category Category { get; set; }
     }
 }
