@@ -80,7 +80,7 @@ namespace Core_WebApp.Controllers
         public async Task<IActionResult> Edit(int id, Category category)
         {
             // validate the received category
-            if (ModelState.IsValid)
+            if (ModelState.IsValid)   
             {
                 var res = await repository.UpdateAsync(id,category);
                 return RedirectToAction("Index"); //redirect to Index action method
