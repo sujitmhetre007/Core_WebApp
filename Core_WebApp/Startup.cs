@@ -72,18 +72,21 @@ namespace Core_WebApp
         {
             if (env.IsDevelopment())
             {
+                // standard dev error page
                 app.UseDeveloperExceptionPage();
             }
             else
             {
+                // error view redirect
                 app.UseExceptionHandler("/Home/Error");
             }
+            // use .js/.css/.img files from wwwroot folder
             app.UseStaticFiles();
-
+            // applicartion routing , default for MVC COntroller and then API Comntrollers
             app.UseRouting();
-
+            // check for security
             app.UseAuthorization();
-
+            // server endpoints to accept request and start routing ASP.NET Core 3.0+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
