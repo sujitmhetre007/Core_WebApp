@@ -2,7 +2,7 @@
 
 namespace Core_WebApp.Migrations
 {
-    public partial class firstMigration : Migration
+    public partial class firstMIgration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -32,7 +32,7 @@ namespace Core_WebApp.Migrations
                     Manufacturer = table.Column<string>(nullable: false),
                     Description = table.Column<string>(nullable: false),
                     Price = table.Column<int>(nullable: false),
-                    CategoryRowId = table.Column<int>(nullable: true)
+                    CategoryRowId = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -42,7 +42,7 @@ namespace Core_WebApp.Migrations
                         column: x => x.CategoryRowId,
                         principalTable: "Categories",
                         principalColumn: "CategoryRowId",
-                        onDelete: ReferentialAction.Restrict);
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
